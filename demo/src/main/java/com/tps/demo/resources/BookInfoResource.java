@@ -1,6 +1,7 @@
 package com.tps.demo.resources;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
@@ -18,7 +19,10 @@ import com.google.api.services.books.model.Volumes;
 import com.google.api.services.books.model.Volume.VolumeInfo;
 
 
+
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 import com.tps.demo.models.BookItem;
@@ -29,8 +33,8 @@ public class BookInfoResource {
     public String hola(){
         return "hola";
     }
-    @RequestMapping("/books/{query}")
-	public java.util.List<BookItem> volumenQuery(@PathVariable("query") String query)
+    @PostMapping("/books/")
+	public java.util.List<BookItem> volumenQuery(@RequestBody String query)
 			throws GeneralSecurityException, IOException, NullPointerException {
 		java.util.List<BookItem> bookItems = new java.util.ArrayList<BookItem>();
         JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();

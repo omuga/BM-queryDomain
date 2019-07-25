@@ -1,7 +1,6 @@
 package com.tps.demo.resources;
 
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
@@ -29,10 +28,7 @@ import com.tps.demo.models.BookItem;
 
 @RestController
 public class BookInfoResource {
-    @RequestMapping("/pop")
-    public String hola(){
-        return "hola";
-    }
+
     @PostMapping("/books/")
 	public java.util.List<BookItem> volumenQuery(@RequestBody String query)
 			throws GeneralSecurityException, IOException, NullPointerException {

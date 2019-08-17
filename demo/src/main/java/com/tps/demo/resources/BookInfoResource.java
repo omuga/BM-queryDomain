@@ -20,7 +20,7 @@ import com.google.api.services.books.model.Volume.VolumeInfo;
 
 
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 
@@ -29,12 +29,12 @@ import com.tps.demo.models.BookItem;
 @RestController
 public class BookInfoResource {
 
-    @PostMapping("/books/")
-	public java.util.List<BookItem> volumenQuery(@RequestBody String query)
+    @GetMapping("/books/{query}")
+	public java.util.List<BookItem> volumenQuery(@PathVariable("query") String query)
 			throws GeneralSecurityException, IOException, NullPointerException {
+
 		java.util.List<BookItem> bookItems = new java.util.ArrayList<BookItem>();
         JsonFactory jsonFactory = JacksonFactory.getDefaultInstance();
-        System.out.println("jjj");
 		final Books books = new Books(GoogleNetHttpTransport.newTrustedTransport(), jsonFactory, null);
 		List volumesList = books.volumes().list(query);
 		Volumes volumes = volumesList.execute();

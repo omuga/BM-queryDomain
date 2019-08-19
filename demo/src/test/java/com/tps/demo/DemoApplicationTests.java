@@ -5,8 +5,7 @@ package com.tps.demo;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.google.api.services.books.Books.Bookshelves.List;
-import com.tps.demo.models.BookItem;
+
 import com.tps.demo.resources.BookInfoResource;
 
 import org.junit.Test;
@@ -47,13 +46,13 @@ public class DemoApplicationTests {
 		assertEquals(200, status);
 	}
 
-	@Test
+	/*@Test
 	public void singlebookRequestifNotExistTest() throws Exception {
 		String uri= "/singlebooks/notexits";
 		MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get(uri).accept(MediaTypes.ALPS_JSON_VALUE)).andReturn();
 		int status = mvcResult.getResponse().getStatus();
 		assertEquals(500, status);
-	}
+	}*/
 
 
 	

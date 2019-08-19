@@ -53,9 +53,6 @@ public class DemoApplicationTests {
 		int status = mvcResult.getResponse().getStatus();
 		assertEquals(500, status);
 	}*/
-
-
-	 //comentario
 	@Test
 	public void contextLoads() {
 	}

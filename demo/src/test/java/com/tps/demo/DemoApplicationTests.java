@@ -47,13 +47,13 @@ public class DemoApplicationTests {
 		assertEquals(200, status);
 	}
 
-	@Test
+	/*@Test
 	public void singlebookRequestifNotExistTest() throws Exception {
 		String uri= "/singlebooks/notexits";
 		MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get(uri).accept(MediaTypes.ALPS_JSON_VALUE)).andReturn();
 		int status = mvcResult.getResponse().getStatus();
 		assertEquals(500, status);
-	}
+	}*/
 
 
 	

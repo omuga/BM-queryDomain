@@ -3,7 +3,7 @@ jdk: oraclejdk8
 
 dist: trusty
 before-script:
-  - cd .\demo\
+   cd demo
 
 script:   
-  - mvn test
+   mvn test
